@@ -1,8 +1,18 @@
 const express=require("express")
-const { CLIENT_RENEG_LIMIT } = require("tls")
+
 
 const PORT=9090
 const app=express()
+
+
+
+app.get("/",async(req,res)=>{
+    
+    const data=await Employee.findAll({})
+    res.json(data)
+})
+
+
 
 app.listen(PORT,()=>{
     console.log(`App is listening on ${PORT}`)
