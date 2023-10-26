@@ -32,7 +32,18 @@ db.Sequelize=Sequelize
 db.sequelize=sequelize
 
 //create table of employee
-db.employees=require("./employee")(sequelize,DataTypes)
+db.Assignment=require("./Assignment")(sequelize,DataTypes)
+db.Attendence=require("./Attendence")(sequelize,DataTypes)
+db.Chat=require("./Chat")(sequelize,DataTypes)
+db.Exam=require("./Exam")(sequelize,DataTypes)
+db.Holiday=require("./Holiday")(sequelize,DataTypes)
+db.Login=require("./Login")(sequelize,DataTypes)
+db.Post=require("./Post")(sequelize,DataTypes)
+db.Profile=require("./Profile")(sequelize,DataTypes)
+db.Report=require("./Report")(sequelize,DataTypes)
+db.Student=require("./Student")(sequelize,DataTypes)
+db.Teacher=require("./Teacher")(sequelize,DataTypes)
+db.Timetable=require("./Timetable")(sequelize,DataTypes)
 
 
 //if table is not exist then it will auto create table
