@@ -1,5 +1,6 @@
 const {createToken,verifyToken}=require("../utils/JwtTokenGeneration")
 const db=require("../models/index")
+const bcrypt=require("bcrypt")
 
 const LoginModel=db.Login
 const Login=async(req,res)=>{
@@ -8,7 +9,7 @@ const Login=async(req,res)=>{
         // console.log(login_id)
         const login=await LoginModel.findByPk(login_id)
         // console.log(login?.login_id)
-        if(login && password===login?.password)
+        if(login && await bcrypt.compare(password,login?.password))
         {
             const token=createToken({login_id:login?.login_id});
             res.json({token});
