@@ -46,6 +46,11 @@ db.Teacher=require("./Teacher")(sequelize,DataTypes)
 db.Timetable=require("./Timetable")(sequelize,DataTypes)
 
 
+
+
+
+
+
 //if table is not exist then it will auto create table
 db.sequelize.sync({force:false}).then(()=>{
     console.log("sync is done")
